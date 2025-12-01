@@ -13,10 +13,11 @@ jobs:
   submit-to-indexnow:
     runs-on: ubuntu-latest
 
-    env:
-      INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
-      INDEXNOW_HOST: bottes-redwing.ca
-      INDEXNOW_ENDPOINT: https://api.indexnow.org/IndexNow
+env:
+  INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+  INDEXNOW_HOST: bottes-redwing.ca
+  INDEXNOW_ENDPOINT: https://api.indexnow.org/IndexNow
+
 
     steps:
       - name: Checkout repository
