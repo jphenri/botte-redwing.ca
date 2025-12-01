@@ -73,7 +73,7 @@ La Red Wing 875 est parfaite pour :
 
 <div class="model-buy-box">
   <div class="model-buy-media">
-    <img src="IMAGE_URL_ICI"
+    <img src="https://chezgerry1958.com/cdn/shop/files/RedwingshoesHeritage-Style875front.jpg?v=1753211733&width=600"
          alt="Red Wing 875 Classic Moc – Oro Legacy"
          loading="lazy"
          style="max-width: 300px; border-radius: 12px; display:block; margin-bottom: 0.75rem;">
