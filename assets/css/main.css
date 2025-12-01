@@ -475,5 +475,40 @@ a:hover {
 
 .site-title-text {
   font-weight: 700
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
 
+.model-card {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.model-card-title {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.model-card-title a {
+  text-decoration: none;
+}
+
+.model-card-title a:hover {
+  text-decoration: underline;
+}
+
+.model-card-desc {
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.model-card-link a {
+  font-size: 0.85rem;
+}
 
