@@ -7,6 +7,5 @@ permalink: /contact/
 
 Pour me contacter à propos d’un projet ou d’une collaboration :
 
-- Site web : [jphenri.ca](https://jphenri.ca)
-- Courriel : `info@jphenri.ca`
-- LinkedIn : ajoute ton lien ici
+- Site web: [chezgerry1958.com](https://chezgerry1958.com)
+- Courriel : `chezgerry1958@gmail.com`
