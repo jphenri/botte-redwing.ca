@@ -1,14 +1,13 @@
 ---
 layout: default
 ---
-
 {% assign current_lang = page.lang | default: site.default_lang %}
 
 <section class="hero">
   <div class="container hero-inner">
     {% if current_lang == "fr" %}
       <p class="hero-kicker">
-        On connait bien
+        On connaît bien
       </p>
 
       <h1 class="hero-title">
@@ -16,37 +15,95 @@ layout: default
       </h1>
 
       <p class="hero-subtitle">
-        La référence pour les bottes Red Wing au Canada
+        La référence pour les bottes Red Wing au Canada. Conseils, entretien, réparations
+        et expertise artisanale avec Chez Gerry 1958.
       </p>
 
       <div class="hero-cta">
         <a class="btn btn-primary" href="{{ '/blog/' | relative_url }}">Voir le blog</a>
         <a class="btn btn-outline" href="https://chezgerry1958.com">
-          Voir sur chez Gerry 1958
+          Voir sur Chez Gerry 1958
         </a>
       </div>
+
     {% else %}
       <p class="hero-kicker">
         We know very well
       </p>
 
       <h1 class="hero-title">
-        <span>Red Wing</span> Boots
+        <span>Red Wing</span> Boots Canada
       </h1>
 
       <p class="hero-subtitle">
-        Red wing boots specialist in Canada
+        The Canadian reference for Red Wing boots. Care, maintenance, repairs
+        and expert craftsmanship powered by Chez Gerry 1958.
       </p>
 
       <div class="hero-cta">
         <a class="btn btn-primary" href="{{ '/en/blog/' | relative_url }}">View the blog</a>
         <a class="btn btn-outline" href="https://chezgerry1958.com">
-          View on chez gerry 1958
+          View on Chez Gerry 1958
         </a>
       </div>
     {% endif %}
   </div>
 </section>
+
+<section class="section">
+  <div class="container">
+    {% if current_lang == "fr" %}
+      <h2>🥾 Pourquoi Chez Gerry 1958 ?</h2>
+
+      <p>
+        Chez Gerry 1958 est reconnu comme l’un des meilleurs ateliers au Canada pour
+        l’entretien et la restauration des bottes Red Wing. Que ce soit pour un
+        ressemelage Vibram, une réparation Goodyear Welt, un changement de semelle classique
+        ou un entretien complet du cuir, vous obtenez un service premium fait par un expert.
+      </p>
+
+      <p>
+        Nous utilisons uniquement des matériaux de haute qualité : Vibram officiel,
+        cuir de qualité supérieure, semelles Red Wing compatibles et techniques artisanales
+        qui prolongent la vie de vos bottes pour des années.
+      </p>
+
+      <ul>
+        <li>✔ Spécialiste Red Wing au Québec et en Ontario</li>
+        <li>✔ Ressemelage Vibram (1136, 430, 4014, etc.)</li>
+        <li>✔ Travail propre, précis et durable</li>
+        <li>✔ Commandes par colis partout au Canada</li>
+        <li>✔ Service transparent : photos, suivi, conseils</li>
+      </ul>
+
+    {% else %}
+      <h2>🥾 Why Choose Chez Gerry 1958?</h2>
+
+      <p>
+        Chez Gerry 1958 is recognized as one of the best workshops in Canada for maintaining
+        and restoring Red Wing boots. Whether you need a Vibram resole, Goodyear welt repair,
+        classic sole replacement or complete leather care, you get premium craftsmanship
+        from a true specialist.
+      </p>
+
+      <p>
+        We use only high-quality components: official Vibram outsoles, premium leather,
+        Red Wing-compatible soles and traditional techniques that extend the life of your
+        boots for years.
+      </p>
+
+      <ul>
+        <li>✔ Red Wing specialist in Quebec & Ontario</li>
+        <li>✔ Vibram resoles (1136, 430, 4014, etc.)</li>
+        <li>✔ Clean, precise and long-lasting work</li>
+        <li>✔ Mail-in repairs across Canada</li>
+        <li>✔ Transparent service: photos, updates, expert guidance</li>
+      </ul>
+
+    {% endif %}
+  </div>
+</section>
+
 
 <section class="section">
   <div class="container">
@@ -80,5 +137,15 @@ layout: default
         <a href="{{ '/en/blog/' | relative_url }}">All posts →</a>
       {% endif %}
     </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="text-align:center;">
+    {% if current_lang == "fr" %}
+      <a href="https://chezgerry1958.com" class="btn btn-primary">Commencer une réparation</a>
+    {% else %}
+      <a href="https://chezgerry1958.com" class="btn btn-primary">Start a repair</a>
+    {% endif %}
   </div>
 </section>
