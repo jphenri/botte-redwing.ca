@@ -1,3 +1,415 @@
+/* Base */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  color: #111111; /* Noir Red Wing */
+  background: #faf7f2; /* Blanc cassé */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Layout */
+
+.site {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-main {
+  flex: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header */
+
+.site-header {
+  background: #111111; /* Noir Red Wing */
+  color: #faf7f2;
+  border-bottom: 1px solid #4b4b4b; /* Gris acier */
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 0;
+}
+
+.site-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.site-nav a {
+  margin-left: 1.25rem;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.site-nav a:hover {
+  opacity: 1;
+}
+
+/* Hero */
+
+.hero {
+  padding: 3rem 0 2.5rem;
+  background: linear-gradient(135deg, #111111, #4b4b4b); /* Noir → gris acier */
+  color: #faf7f2;
+}
+
+.hero-inner {
+  text-align: left;
+}
+
+.hero-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-bottom: 0.75rem;
+}
+
+.hero-title {
+  font-size: 2.3rem;
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+.hero-title span {
+  color: #a6192e; /* Rouge Red Wing */
+}
+
+.hero-subtitle {
+  max-width: 40rem;
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #a6192e; /* Rouge Red Wing */
+  color: #faf7f2;
+  border-color: #a6192e;
+}
+
+.btn-primary:hover {
+  background: #c21d34; /* Rouge plus clair */
+}
+
+.btn-outline {
+  background: transparent;
+  color: #faf7f2;
+  border-color: #f2e9d8; /* Beige cuir */
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Sections */
+
+.section {
+  padding: 2.5rem 0;
+}
+
+.section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1.4rem;
+  color: #111111;
+}
+
+/* Posts list */
+
+.post-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.post-card {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 8px 20px rgba(17, 17, 17, 0.06);
+}
+
+.post-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+
+.post-meta {
+  font-size: 0.8rem;
+  color: #4b4b4b; /* Gris acier */
+  margin-bottom: 0.6rem;
+}
+
+.post-excerpt {
+  font-size: 0.95rem;
+  color: #111111;
+}
+
+.section-more {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #a6192e; /* Rouge */
+}
+
+/* Single post & pages */
+
+.page-header,
+.post-header {
+  margin-bottom: 1.5rem;
+}
+
+.page-header h1,
+.post-header h1 {
+  margin-bottom: 0.4rem;
+  color: #111111;
+}
+
+.page-subtitle {
+  color: #4b4b4b;
+}
+
+.post-content,
+.page-content {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.4rem 1.5rem;
+  box-shadow: 0 8px 20px rgba(17, 17, 17, 0.06);
+}
+
+.post-content p,
+.page-content p {
+  margin-bottom: 1rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.12rem 0.5rem;
+  margin-left: 0.25rem;
+  border-radius: 999px;
+  background: #f2e9d8; /* Beige cuir */
+  font-size: 0.75rem;
+  color: #111111;
+}
+
+.back-to-blog {
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  color: #a6192e;
+}
+
+/* Footer */
+
+.site-footer {
+  background: #111111;
+  color: #f2e9d8;
+  padding: 1.5rem 0;
+  font-size: 0.85rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.footer-links a {
+  color: #faf7f2;
+}
+
+/* Responsive */
+
+@media (max-width: 640px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .hero {
+    padding: 2.2rem 0 2rem;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.lang-switch {
+  margin-left: 1.5rem;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.lang-switch strong {
+  font-weight: 700;
+}
+
+.lang-switch a {
+  text-decoration: none;
+}
+
+.lang-switch .lang-disabled {
+  opacity: 0.4;
+}
+.site-footer {
+  background: #2b0c0d; /* rouge brun foncé façon Red Wing */
+  color: #e5e5e5;
+  padding: 2rem 0 1.5rem;
+  font-size: 0.85rem;
+  border-top: 1px solid #7c1d21;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer-brand {
+  max-width: 480px;
+}
+
+.footer-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 0.4rem;
+}
+
+.footer-subtitle {
+  margin: 0 0 0.5rem;
+  color: #f3f4f6;
+  opacity: 0.9;
+}
+
+.footer-domain a {
+  color: #fbbf24;
+  text-decoration: none;
+}
+
+.footer-domain a:hover {
+  text-decoration: underline;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.footer-col h4 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.6rem;
+  color: #fefce8;
+}
+
+.footer-col p {
+  margin: 0 0 0.5rem;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.35rem;
+}
+
+.footer-links a {
+  color: #e5e5e5;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer-social span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(248, 250, 252, 0.08);
+  padding-top: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.footer-bottom p {
+  margin: 0.15rem 0;
+}
+
+.footer-small {
+  opacity: 0.7;
+  font-size: 0.78rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* HEADER BRAND */
 
 .site-brand {
@@ -47,9 +459,22 @@
     margin-bottom: 0.4rem;
   }
 }
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: inherit;
+}
 
-/* ====== GRILLE DES MODELES ====== */
+.site-logo {
+  height: 42px;
+  width: auto;
+  display: block;
+}
 
+.site-title-text {
+  font-weight: 700
 .model-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -86,7 +511,6 @@
 .model-card-link a {
   font-size: 0.85rem;
 }
-
 /* ====== BLOC ACHAT MODELE RED WING ====== */
 
 .model-buy-box {
@@ -126,6 +550,7 @@
   margin: 0 0 0.5rem;
 }
 
+/* Bouton dans le bloc achat (reuse style Red Wing) */
 .model-buy-content .btn,
 .model-buy-content a.btn {
   display: inline-flex;
@@ -147,11 +572,13 @@
   background: #a52828;
 }
 
+/* Note en dessous du bouton */
 .model-buy-content .model-buy-note {
   font-size: 0.82rem;
   opacity: 0.8;
 }
 
+/* Responsive : pile l'image au-dessus du texte sur mobile */
 @media (max-width: 720px) {
   .model-buy-box {
     flex-direction: column;
@@ -168,15 +595,15 @@
     text-align: center;
   }
 }
-
 /* ====== PAGES MODELES RED WING ====== */
 
 .model-page {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem 3rem;
+  max-width: 960px;          /* même largeur que le reste du site */
+  margin: 0 auto;            /* centre la page */
+  padding: 2rem 1.5rem 3rem; /* espace autour du contenu */
 }
 
+/* Titre et sous-titre */
 .model-header h1 {
   margin-top: 1rem;
   margin-bottom: 0.5rem;
@@ -189,17 +616,20 @@
   color: #4b5563;
 }
 
+/* Corps du texte */
 .model-content {
   line-height: 1.7;
   font-size: 0.98rem;
 }
 
+/* Sous-titres (Description détaillée, Caractéristiques, etc.) */
 .model-content h2 {
   margin-top: 1.8rem;
   margin-bottom: 0.6rem;
   font-size: 1.2rem;
 }
 
+/* Listes plus aérées */
 .model-content ul {
   padding-left: 1.3rem;
   margin-top: 0.4rem;
@@ -210,6 +640,7 @@
   margin-bottom: 0.2rem;
 }
 
+/* Séparateurs (---) un peu plus doux */
 .model-content hr {
   border: 0;
   border-top: 1px solid #e5e7eb;
