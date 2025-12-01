@@ -1,4 +1,4 @@
----
+[---
 title: "Red Wing 8111 Iron Ranger – Amber Harness"
 lang: "fr"
 lang_ref: "rw-8111"
@@ -47,3 +47,4 @@ https://chezgerry1958.com/products/red-wing-8111-iron-ranger
   }
 }
 </script>
+](https://chezgerry1958.com/cdn/shop/files/ChaussuresRedWingHeritage8090_ShopMocOxfordenNoirCharbon.jpg?v=1753367161&width=600)
