@@ -1,0 +1,298 @@
+/* Base */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  color: #111827;
+  background: #f3f4f6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Layout */
+
+.site {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-main {
+  flex: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header */
+
+.site-header {
+  background: #111827;
+  color: #f9fafb;
+  border-bottom: 1px solid #1f2937;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 0;
+}
+
+.site-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.site-nav a {
+  margin-left: 1.25rem;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.site-nav a:hover {
+  opacity: 1;
+}
+
+/* Hero */
+
+.hero {
+  padding: 3rem 0 2.5rem;
+  background: linear-gradient(135deg, #111827, #1f2937);
+  color: #f9fafb;
+}
+
+.hero-inner {
+  text-align: left;
+}
+
+.hero-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-bottom: 0.75rem;
+}
+
+.hero-title {
+  font-size: 2.3rem;
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+.hero-title span {
+  color: #facc15;
+}
+
+.hero-subtitle {
+  max-width: 40rem;
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #facc15;
+  color: #111827;
+  border-color: #facc15;
+}
+
+.btn-primary:hover {
+  background: #fde68a;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #f9fafb;
+  border-color: #e5e7eb;
+}
+
+.btn-outline:hover {
+  background: rgba(249, 250, 251, 0.06);
+}
+
+/* Sections */
+
+.section {
+  padding: 2.5rem 0;
+}
+
+.section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+
+/* Posts list */
+
+.post-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.post-card {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.post-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+
+.post-meta {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 0.6rem;
+}
+
+.post-excerpt {
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.section-more {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Single post & pages */
+
+.page-header,
+.post-header {
+  margin-bottom: 1.5rem;
+}
+
+.page-header h1,
+.post-header h1 {
+  margin-bottom: 0.4rem;
+}
+
+.page-subtitle {
+  color: #6b7280;
+}
+
+.post-content,
+.page-content {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.4rem 1.5rem;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.post-content p,
+.page-content p {
+  margin-bottom: 1rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.12rem 0.5rem;
+  margin-left: 0.25rem;
+  border-radius: 999px;
+  background: #e5e7eb;
+  font-size: 0.75rem;
+}
+
+.back-to-blog {
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+}
+
+/* Footer */
+
+.site-footer {
+  background: #111827;
+  color: #9ca3af;
+  padding: 1.5rem 0;
+  font-size: 0.85rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.footer-links a {
+  color: #e5e7eb;
+}
+
+/* Responsive */
+
+@media (max-width: 640px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .hero {
+    padding: 2.2rem 0 2rem;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.lang-switch {
+  margin-left: 1.5rem;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.lang-switch strong {
+  font-weight: 700;
+}
+
+.lang-switch a {
+  text-decoration: none;
+}
+
+.lang-switch .lang-disabled {
+  opacity: 0.4;
+}

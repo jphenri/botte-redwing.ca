@@ -1,0 +1,86 @@
+---
+layout: default
+---
+
+{% assign current_lang = page.lang | default: site.default_lang %}
+
+<section class="hero">
+  <div class="container hero-inner">
+    {% if current_lang == "fr" %}
+      <p class="hero-kicker">
+        IA · DevOps · Business 2.0
+      </p>
+
+      <h1 class="hero-title">
+        Basic <span>GitHub Pages</span> template
+      </h1>
+
+      <p class="hero-subtitle">
+        Ce dépôt est mon template de base pour créer rapidement des sites GitHub Pages
+        avec blog intégré, thème custom et bonnes pratiques SEO.
+      </p>
+
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="{{ '/blog/' | relative_url }}">Voir le blog</a>
+        <a class="btn btn-outline" href="https://github.com/jphenri/basic-gh-page-template">
+          Voir sur GitHub
+        </a>
+      </div>
+    {% else %}
+      <p class="hero-kicker">
+        AI · DevOps · Business 2.0
+      </p>
+
+      <h1 class="hero-title">
+        Basic <span>GitHub Pages</span> template
+      </h1>
+
+      <p class="hero-subtitle">
+        This repo is my starter template to quickly create GitHub Pages sites
+        with a built-in blog, custom theme and good SEO defaults.
+      </p>
+
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="{{ '/en/blog/' | relative_url }}">View the blog</a>
+        <a class="btn btn-outline" href="https://github.com/jphenri/basic-gh-page-template">
+          View on GitHub
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {% if current_lang == "fr" %}
+      <h2>Articles récents</h2>
+    {% else %}
+      <h2>Latest posts</h2>
+    {% endif %}
+
+    <div class="post-list">
+      {% assign lang_posts = site.posts | where: "lang", current_lang %}
+      {% for post in lang_posts limit: 5 %}
+        <article class="post-card">
+          <h3>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          <p class="post-meta">
+            {{ post.date | date: "%Y-%m-%d" }}
+          </p>
+          <p class="post-excerpt">
+            {{ post.excerpt | strip_html | truncate: 160 }}
+          </p>
+        </article>
+      {% endfor %}
+    </div>
+
+    <p class="section-more">
+      {% if current_lang == "fr" %}
+        <a href="{{ '/blog/' | relative_url }}">Tous les articles →</a>
+      {% else %}
+        <a href="{{ '/en/blog/' | relative_url }}">All posts →</a>
+      {% endif %}
+    </p>
+  </div>
+</section>

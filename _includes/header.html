@@ -1,0 +1,57 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="site-title" href="{{ '/' | relative_url }}">
+      {{ site.title }}
+    </a>
+
+    <nav class="site-nav">
+      {% assign current_lang = page.lang | default: site.default_lang %}
+      {% assign current_ref = page.lang_ref | default: '' %}
+
+      {%- comment -%}
+      Trouver la page jumelle dans l’autre langue, basée sur lang_ref
+      {%- endcomment -%}
+      {% assign alt_page = nil %}
+      {% if current_ref != '' %}
+        {% assign candidates = site.pages | where: "lang_ref", current_ref %}
+        {% for p in candidates %}
+          {% if p.lang != current_lang %}
+            {% assign alt_page = p %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      <!-- NAV LIENS --->
+      {% if current_lang == "fr" %}
+        <a href="{{ '/' | relative_url }}">Accueil</a>
+        <a href="{{ '/blog/' | relative_url }}">Blog</a>
+        <a href="{{ '/projects/' | relative_url }}">Projets</a>
+        <a href="{{ '/contact/' | relative_url }}">Contact</a>
+      {% else %}
+        <a href="{{ '/en/' | relative_url }}">Home</a>
+        <a href="{{ '/en/blog/' | relative_url }}">Blog</a>
+        <a href="{{ '/en/projects/' | relative_url }}">Projects</a>
+        <a href="{{ '/en/contact/' | relative_url }}">Contact</a>
+      {% endif %}
+
+      <!--SWITCH LANG --->
+      <span class="lang-switch">
+        {% if current_lang == "fr" %}
+          <strong>FR</strong>
+          {% if alt_page %}
+            · <a href="{{ alt_page.url | relative_url }}">EN</a>
+          {% else %}
+            · <span class="lang-disabled">EN</span>
+          {% endif %}
+        {% else %}
+          {% if alt_page %}
+            <a href="{{ alt_page.url | relative_url }}">FR</a>
+          {% else %}
+            <span class="lang-disabled">FR</span>
+          {% endif %}
+          · <strong>EN</strong>
+        {% endif %}
+      </span>
+    </nav>
+  </div>
+</header>
