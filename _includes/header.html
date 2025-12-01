@@ -18,6 +18,9 @@
       {% assign current_lang = page.lang | default: site.default_lang %}
       {% assign current_ref = page.lang_ref | default: '' %}
 
+      {%- comment -%}
+      Trouver la page jumelle dans l’autre langue, basée sur lang_ref
+      {%- endcomment -%}
       {% assign alt_page = nil %}
       {% if current_ref != '' %}
         {% assign candidates = site.pages | where: "lang_ref", current_ref %}
@@ -49,3 +52,17 @@
             · <a href="{{ alt_page.url | relative_url }}">EN</a>
           {% else %}
             · <span class="lang-disabled">EN</span>
+          {% endif %}
+        {% else %}
+          {% if alt_page %}
+            <a href="{{ alt_page.url | relative_url }}">FR</a>
+          {% else %}
+            <span class="lang-disabled">FR</span>
+          {% endif %}
+          · <strong>EN</strong>
+        {% endif %}
+      </span>
+    </nav>
+
+  </div>
+</header>
