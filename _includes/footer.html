@@ -1,1 +1,117 @@
-<footer class='site-footer'><div class='container footer-inner'>© {{ site.time | date: '%Y' }}</div></footer>
+{% assign current_lang = page.lang | default: site.default_lang %}
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+
+    <!-- Colonne marque / description -->
+    <div class="footer-brand">
+      <p class="footer-title">Bottes Red Wing Canada</p>
+      <p class="footer-subtitle">
+        {% if current_lang == "fr" %}
+          Ressources, conseils et entretien pour vos bottes Red Wing au Canada.
+        {% else %}
+          Resources, tips and care for your Red Wing boots in Canada.
+        {% endif %}
+      </p>
+
+      <p class="footer-domain">
+        <a href="https://bottes-redwing.ca">bottes-redwing.ca</a>
+        ·
+        <a href="https://chezgerry1958.com" target="_blank" rel="noopener">
+          ChezGerry1958.com
+        </a>
+      </p>
+    </div>
+
+    <!-- Colonnes infos -->
+    <div class="footer-columns">
+
+      <!-- Colonne adresse -->
+      <div class="footer-col">
+        <h4>
+          {% if current_lang == "fr" %}
+            Atelier Chez Gerry 1958
+          {% else %}
+            Chez Gerry 1958 Workshop
+          {% endif %}
+        </h4>
+        <p>
+          4 Rue Demontigny<br>
+          Gatineau (Québec) J8Y 4L2<br>
+          {% if current_lang == "fr" %}
+            Tél. : <a href="tel:18197763615">(819) 776-3615</a>
+          {% else %}
+            Phone: <a href="tel:18197763615">+1 819-776-3615</a>
+          {% endif %}
+        </p>
+      </div>
+
+      <!-- Colonne liens rapides -->
+      <div class="footer-col">
+        <h4>
+          {% if current_lang == "fr" %}
+            Liens utiles
+          {% else %}
+            Useful links
+          {% endif %}
+        </h4>
+        <ul class="footer-links">
+          {% if current_lang == "fr" %}
+            <li><a href="{{ '/' | relative_url }}">Accueil</a></li>
+            <li><a href="{{ '/red-wing-canada/' | relative_url }}">Red Wing Canada</a></li>
+            <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+          {% else %}
+            <li><a href="{{ '/en/' | relative_url }}">Home</a></li>
+            <li><a href="{{ '/en/red-wing-canada/' | relative_url }}">Red Wing Canada</a></li>
+            <li><a href="{{ '/en/blog/' | relative_url }}">Blog</a></li>
+          {% endif %}
+          <li>
+            <a href="https://chezgerry1958.com" target="_blank" rel="noopener">
+              ChezGerry1958.com
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Colonne réseaux sociaux -->
+      <div class="footer-col">
+        <h4>
+          {% if current_lang == "fr" %}
+            Nous suivre
+          {% else %}
+            Follow us
+          {% endif %}
+        </h4>
+        <ul class="footer-links footer-social">
+          <li><a href="https://www.facebook.com/chezgerry1958" target="_blank">📘 Facebook</a></li>
+          <li><a href="https://www.instagram.com/chezgerry1958" target="_blank">📸 Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@chezgerry1958" target="_blank">🎵 TikTok</a></li>
+          <li><a href="https://www.youtube.com/@chezgerry1958" target="_blank">▶️ YouTube</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bas de footer -->
+    <div class="footer-bottom">
+      <p>
+        © {{ "now" | date: "%Y" }}
+        {% if current_lang == "fr" %}
+          Bottes Red Wing Canada · Propulsé par
+        {% else %}
+          Bottes Red Wing Canada · Powered by
+        {% endif %}
+        <a href="https://chezgerry1958.com" target="_blank">Chez Gerry 1958</a>
+      </p>
+
+      <p class="footer-small">
+        {% if current_lang == "fr" %}
+          Site d’information indépendant sur les bottes Red Wing au Canada. Red Wing est une marque déposée de ses propriétaires.
+        {% else %}
+          Independent information site about Red Wing boots in Canada. Red Wing is a registered trademark of its respective owners.
+        {% endif %}
+      </p>
+    </div>
+
+  </div>
+</footer>
