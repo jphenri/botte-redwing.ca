@@ -511,4 +511,88 @@ a:hover {
 .model-card-link a {
   font-size: 0.85rem;
 }
+/* ====== BLOC ACHAT MODELE RED WING ====== */
+
+.model-buy-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1.75rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.9rem;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.model-buy-media {
+  flex: 0 0 auto;
+}
+
+.model-buy-media img {
+  display: block;
+  max-width: 260px;
+  height: auto;
+  border-radius: 0.75rem;
+  border: 1px solid #dddddd;
+}
+
+.model-buy-content {
+  flex: 1 1 220px;
+  font-size: 0.95rem;
+  color: #111827;
+}
+
+.model-buy-content p {
+  margin: 0 0 0.5rem;
+}
+
+/* Bouton dans le bloc achat (reuse style Red Wing) */
+.model-buy-content .btn,
+.model-buy-content a.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.3rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  background: #8b1e1e;       /* Rouge Red Wing */
+  color: #fff;
+}
+
+.model-buy-content .btn:hover,
+.model-buy-content a.btn:hover {
+  background: #a52828;
+}
+
+/* Note en dessous du bouton */
+.model-buy-content .model-buy-note {
+  font-size: 0.82rem;
+  opacity: 0.8;
+}
+
+/* Responsive : pile l'image au-dessus du texte sur mobile */
+@media (max-width: 720px) {
+  .model-buy-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .model-buy-media img {
+    max-width: 100%;
+  }
+
+  .model-buy-content .btn,
+  .model-buy-content a.btn {
+    width: 100%;
+    text-align: center;
+  }
+}
 
