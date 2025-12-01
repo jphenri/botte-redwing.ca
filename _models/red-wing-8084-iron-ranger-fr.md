@@ -96,7 +96,7 @@ La Red Wing 8084 est idéale pour :
 
 ---
 
-## 🧾 Données structurées (SEO)
+
 
 <script type="application/ld+json">
 {
