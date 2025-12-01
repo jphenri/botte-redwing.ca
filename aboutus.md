@@ -2,7 +2,7 @@
 layout: page
 title: "Red Wing Canada – Le Guide Complet 2025"
 lang: fr
-permalink: /red-wing-canada/
+permalink: /aboutus/
 description: "Le guide complet 2025 sur les bottes Red Wing au Canada : modèles, conseils, comparatifs, réparations, semelles Vibram, bottes CSA et meilleures pratiques d'entretien."
 ---
 
