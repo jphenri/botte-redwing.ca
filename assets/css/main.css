@@ -511,6 +511,45 @@ a:hover {
 .model-card-link a {
   font-size: 0.85rem;
 }
+/* ====== GRILLE DES MODELES ====== */
+
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.model-card {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.model-card-title {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.model-card-title a {
+  text-decoration: none;
+}
+
+.model-card-title a:hover {
+  text-decoration: underline;
+}
+
+.model-card-desc {
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.model-card-link a {
+  font-size: 0.85rem;
+}
+
 /* ====== BLOC ACHAT MODELE RED WING ====== */
 
 .model-buy-box {
@@ -550,7 +589,6 @@ a:hover {
   margin: 0 0 0.5rem;
 }
 
-/* Bouton dans le bloc achat (reuse style Red Wing) */
 .model-buy-content .btn,
 .model-buy-content a.btn {
   display: inline-flex;
@@ -572,13 +610,11 @@ a:hover {
   background: #a52828;
 }
 
-/* Note en dessous du bouton */
 .model-buy-content .model-buy-note {
   font-size: 0.82rem;
   opacity: 0.8;
 }
 
-/* Responsive : pile l'image au-dessus du texte sur mobile */
 @media (max-width: 720px) {
   .model-buy-box {
     flex-direction: column;
@@ -595,15 +631,15 @@ a:hover {
     text-align: center;
   }
 }
+
 /* ====== PAGES MODELES RED WING ====== */
 
 .model-page {
-  max-width: 960px;          /* même largeur que le reste du site */
-  margin: 0 auto;            /* centre la page */
-  padding: 2rem 1.5rem 3rem; /* espace autour du contenu */
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
 }
 
-/* Titre et sous-titre */
 .model-header h1 {
   margin-top: 1rem;
   margin-bottom: 0.5rem;
@@ -616,20 +652,17 @@ a:hover {
   color: #4b5563;
 }
 
-/* Corps du texte */
 .model-content {
   line-height: 1.7;
   font-size: 0.98rem;
 }
 
-/* Sous-titres (Description détaillée, Caractéristiques, etc.) */
 .model-content h2 {
   margin-top: 1.8rem;
   margin-bottom: 0.6rem;
   font-size: 1.2rem;
 }
 
-/* Listes plus aérées */
 .model-content ul {
   padding-left: 1.3rem;
   margin-top: 0.4rem;
@@ -640,7 +673,6 @@ a:hover {
   margin-bottom: 0.2rem;
 }
 
-/* Séparateurs (---) un peu plus doux */
 .model-content hr {
   border: 0;
   border-top: 1px solid #e5e7eb;
