@@ -2,18 +2,20 @@
 layout: default
 ---
 
-
-  <header class="model-header">
-  <article class="model-page">
-    <h1>{{ page.title }}</h1>
-
-    {% if page.description %}
-      <p class="model-subtitle">{{ page.description }}</p>
-    {% endif %}
-  </header>
-
-  <div class="model-content">
-    {{ content }}
+<section class="section">
+  <div class="container">
+    <article class="model-page">
+      <header class="model-header">
+        <h1>{{ page.title }}</h1>
+    
+        {% if page.description %}
+          <p class="model-subtitle">{{ page.description }}</p>
+        {% endif %}
+      </header>
+    
+      <div class="model-content">
+        {{ content }}
+      </div>
+    </article>
   </div>
-</article>
-
+</section>
