@@ -1,0 +1,89 @@
+name: IndexNow URL Submission
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    # Optional: once a day at 05:00 UTC
+    - cron: "0 5 * * *"
+
+jobs:
+  submit-to-indexnow:
+    runs-on: ubuntu-latest
+
+    env:
+      INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+      INDEXNOW_HOST: bottes-redwing.ca
+      INDEXNOW_ENDPOINT: https://api.indexnow.org/IndexNow
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build URL list from sitemap
+        id: build_urls
+        run: |
+          # Fetch sitemap from live site (requires sitemap.xml to exist)
+          SITEMAP_URL="https://${INDEXNOW_HOST}/sitemap.xml"
+          echo "Fetching sitemap from ${SITEMAP_URL}..."
+
+          SITEMAP_CONTENT=$(curl -s "$SITEMAP_URL")
+
+          if [ -z "$SITEMAP_CONTENT" ]; then
+            echo "Sitemap is empty or not reachable. Exiting."
+            exit 0
+          fi
+
+          # Extract all <loc> URLs from sitemap.xml
+          URLS=$(printf "%s" "$SITEMAP_CONTENT" | grep -oP '(?<=<loc>).*?(?=</loc>)' || true)
+
+          if [ -z "$URLS" ]; then
+            echo "No URLs found in sitemap. Exiting."
+            exit 0
+          fi
+
+          echo "Found URLs:"
+          printf "%s\n" "$URLS"
+
+          # Build JSON array of URLs with jq
+          URL_JSON=$(printf "%s\n" "$URLS" | jq -R . | jq -s .)
+
+          # Build full payload for IndexNow
+          KEY_LOCATION="https://${INDEXNOW_HOST}/key-${INDEXNOW_KEY}.txt"
+
+          jq -n \
+            --arg host "$INDEXNOW_HOST" \
+            --arg key "$INDEXNOW_KEY" \
+            --arg keyLocation "$KEY_LOCATION" \
+            --argjson urlList "$URL_JSON" \
+            '{host: $host, key: $key, keyLocation: $keyLocation, urlList: $urlList}' \
+            > indexnow_payload.json
+
+          echo "Generated payload:"
+          cat indexnow_payload.json
+
+      - name: Submit URLs to IndexNow
+        if: always()
+        run: |
+          if [ ! -f indexnow_payload.json ]; then
+            echo "No payload generated, skipping submission."
+            exit 0
+          fi
+
+          echo "Submitting to IndexNow endpoint: ${INDEXNOW_ENDPOINT}"
+          HTTP_CODE=$(curl -s -o response.json -w "%{http_code}" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -X POST "${INDEXNOW_ENDPOINT}" \
+            --data-binary @indexnow_payload.json)
+
+          echo "IndexNow HTTP status: ${HTTP_CODE}"
+          echo "Response body:"
+          cat response.json
+
+          # Optional: fail workflow on non-2xx
+          if [ "$HTTP_CODE" -lt 200 ] || [ "$HTTP_CODE" -ge 300 ]; then
+            echo "IndexNow submission failed with status ${HTTP_CODE}"
+            exit 1
+          fi
