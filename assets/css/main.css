@@ -409,3 +409,54 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* HEADER BRAND */
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-logo {
+  height: 42px;
+  width: auto;
+  display: block;
+}
+
+.site-title-text {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* NAV SPACING */
+.site-nav a {
+  margin-left: 1.2rem;
+}
+
+/* LANG SWITCH */
+.lang-switch {
+  margin-left: 1.5rem;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.lang-switch strong {
+  font-weight: 700;
+}
+
+.lang-switch .lang-disabled {
+  opacity: 0.35;
+}
+
+/* MOBILE FIX */
+@media (max-width: 640px) {
+  .site-brand {
+    margin-bottom: 0.4rem;
+  }
+}
+
