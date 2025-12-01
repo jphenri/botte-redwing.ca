@@ -1,24 +1,24 @@
 ---
 layout: page
-title: "Modèles Red Wing"
-permalink: /models/
-lang: fr
+title: "Red Wing Models"
+permalink: /en/models/
+lang: en
 lang_ref: models-index
-description: "Découvrez tous les modèles de bottes Red Wing disponibles chez Chez Gerry 1958 au Canada."
+description: "Browse all Red Wing boot models available at Chez Gerry 1958 in Canada."
 ---
 
 <section class="section">
   <div class="container">
-    <h1>Modèles Red Wing disponibles</h1>
+    <h1>Red Wing models available</h1>
     <p>
-      Voici une sélection de bottes Red Wing offertes chez
+      Here is a selection of Red Wing boots offered at
       <a href="https://chezgerry1958.com" target="_blank" rel="noopener">Chez Gerry 1958</a>.
-      Cliquez sur un modèle pour voir la fiche détaillée, les caractéristiques et le lien d’achat.
+      Click a model to view detailed specs and purchase links.
     </p>
 
     <div class="model-grid">
-      {% assign fr_models = site.models | where: "lang", "fr" | sort: "title" %}
-      {% for model in fr_models %}
+      {% assign en_models = site.models | where: "lang", "en" | sort: "title" %}
+      {% for model in en_models %}
         <article class="model-card">
           <h2 class="model-card-title">
             <a href="{{ model.url | relative_url }}">{{ model.title }}</a>
@@ -31,7 +31,7 @@ description: "Découvrez tous les modèles de bottes Red Wing disponibles chez C
           {% endif %}
 
           <p class="model-card-link">
-            <a href="{{ model.url | relative_url }}">Voir la fiche →</a>
+            <a href="{{ model.url | relative_url }}">View details →</a>
           </p>
         </article>
       {% endfor %}
