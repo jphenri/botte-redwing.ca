@@ -459,4 +459,21 @@ a:hover {
     margin-bottom: 0.4rem;
   }
 }
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-logo {
+  height: 42px;
+  width: auto;
+  display: block;
+}
+
+.site-title-text {
+  font-weight: 700
+
 
