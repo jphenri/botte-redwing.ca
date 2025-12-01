@@ -7,6 +7,5 @@ permalink: /en/contact/
 
 To contact me about a project or collaboration:
 
-- Website: [jphenri.ca](https://jphenri.ca)
-- Email: `info@jphenri.ca`
-- LinkedIn: add your link here
+- Website: [chezgerry1958.com](https://chezgerry1958.com)
+- Email: `chezgerry1958@gmail.com`
