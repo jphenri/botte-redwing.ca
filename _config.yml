@@ -3,7 +3,7 @@
 title: "Bottes Redwing Canada"
 description: " Nos chaussures préférées"
 url: "https://bottes-rewing.ca"
-#baseurl: ""
+baseurl: ""
 
 author: "J.P. Henri"
 lang: "fr"
