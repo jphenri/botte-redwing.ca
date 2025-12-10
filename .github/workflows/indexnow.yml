@@ -18,6 +18,6 @@ jobs:
         with:
           host: jphenri.github.io
           api_key: ${{ secrets.INDEX_NOW_API_KEY }}
-          api_key_location: https://jphenri.github.io/${{ secrets.INDEX_NOW_API_KEY }}.txt
-          sitemap_locations: https://jphenri.github.io/botte-redwing/sitemap.xml
+          api_key_location: https://bottes-redwin.ca/${{ secrets.INDEX_NOW_API_KEY }}.txt
+          sitemap_locations: https://bottes-redwing.ca/sitemap.xml
           endpoint: yandex
