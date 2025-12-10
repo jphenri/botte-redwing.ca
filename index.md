@@ -11,7 +11,7 @@ permalink: /
     <p class="hero-kicker">Cordonnerie · Red Wing · Vibram</p>
 
     <h1 class="hero-title">
-      Redonner vie à vos bottes <span>Red Wing & Vibram</span>
+      Redonner vie à vos bottes <span>Red Wing & Vibram!</span>
     </h1>
 
     <p class="hero-subtitle">
