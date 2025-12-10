@@ -16,8 +16,8 @@ jobs:
       - name: Submit sitemap URLs to IndexNow
         uses: jakob-bagterp/index-now-submit-sitemap-action@v1
         with:
-          host: jphenri.github.io
+          host: bottes-redwing.ca
           api_key: ${{ secrets.INDEX_NOW_API_KEY }}
-          api_key_location: https://bottes-redwin.ca/${{ secrets.INDEX_NOW_API_KEY }}.txt
+          api_key_location: https://bottes-redwing.ca/${{ secrets.INDEX_NOW_API_KEY }}.txt
           sitemap_locations: https://bottes-redwing.ca/sitemap.xml
           endpoint: yandex
