@@ -21,7 +21,7 @@ permalink: /
     </p>
 
     <div class="hero-cta">
-      <a href="https://chezgerry1958.com" class="btn btn-primary">Visiter notre boutique</a>
+      <a href="https://chezgerry1958.com" class="btn btn-primary">Visiter notre boutique ici</a>
       <a href="/blog" class="btn btn-outline">Voir nos réparations</a>
     </div>
   </div>
